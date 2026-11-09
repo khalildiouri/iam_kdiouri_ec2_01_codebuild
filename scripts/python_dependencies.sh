@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+set -eux
 
-virtualenv /home/ubuntu/env
+python3 -m pip install --upgrade pip setuptools wheel virtualenv "packaging>=26.3"
+python3 -m virtualenv /home/ubuntu/env
 source /home/ubuntu/env/bin/activate
-pip install -r /home/ubuntu/project_devops/requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r /home/ubuntu/project_devops/requirements.txt
